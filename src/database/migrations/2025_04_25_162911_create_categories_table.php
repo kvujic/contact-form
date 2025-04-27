@@ -10,18 +10,7 @@ class CreateCategoriesTable extends Migration
      * Run the migrations.
      *
      * @return void
-     */
-    public function up()
-    {
-        Schema::create('categories', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->string('email');
-            $table->string('password');
-            $table->timestamp('created_at')->useCurrent()->nullable();
-            $table->timestamp('updated_at')->useCurrent()->nullable();
-        });
-    }
+     *
 
     /**
      * Reverse the migrations.

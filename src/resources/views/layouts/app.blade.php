@@ -17,6 +17,7 @@
 </head>
 
 <body>
+    @if(!isset($no_header))
     <header class="header">
         <div class="header__inner">
             <div class="header__logo">
@@ -51,6 +52,7 @@
             </nav>
         </div>
     </header>
+    @endif
 
     <main>
         @yield('content')

@@ -1,7 +1,12 @@
+.form__error {
+    display: flex;
+    gap: 20px;
+}
+
 .error-message {
     color: #ff9494;
     font-size: 14px;
-    margin-top: 4px;
+    text-align: left;
 }
 
 .contact-form {
@@ -170,7 +175,7 @@ textarea {
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
     border-top: 10px solid #beb1a6;
-    transform: translate(-50%)
+    transform: translateY(-50%);
 }
 
 .form__input--item-email input,
@@ -188,7 +193,7 @@ textarea {
 }
 
 .form__button {
-    margin: 0 auto;
+    margin: 20px auto;
     text-align: center;
 }
 
