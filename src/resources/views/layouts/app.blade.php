@@ -25,11 +25,8 @@
             </div>
             <nav class="header-nav">
                 <ul class="header-nav__inner">
-                    @if(Auth::check())
+                    @if(Auth::check() && Request::path() === 'admin')
                     {{-- logged in --}}
-                    <li class="header-nav__item">
-                        <a class="header-nav__link" href="/admin">Admin</a>
-                    </li>
                     <li class="header-nav__item">
                         <form action="/logout" method="POST">
                             @csrf

@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,3 +25,10 @@ Route::post('/', [ContactController::class, 'index']);
 Route::post('/confirm', [ContactController::class, 'confirm']);
 Route::post('/thanks', [ContactController::class, 'store']);
 Route::get('/reset', [ContactController::class, 'reset']);
+
+Route::post('/register', [AuthController::class, 'store']);
+
+Route::middleware('auth')->group(function() {
+    Route::get('/admin', [AdminController::class, 'index'])->name('admin');
+});
+
