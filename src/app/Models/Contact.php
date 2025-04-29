@@ -41,19 +41,19 @@ class Contact extends Model
     }
 
     public function scopeGenderSearch($query, $gender) {
-        if(!empty($request->gender)) {
+        if(!empty($gender)) {
             $query->where('gender', $gender);
         }
     }
 
     public function scopeCategorySearch($query, $category_id) {
-        if(!empty($request->category_id)) {
+        if(!empty($category_id)) {
             $query->where('category_id', $category_id);
         }
     }
 
     public function scopeDateSearch($query, $date) {
-        if(!empty($request->date)) {
+        if(!empty($date)) {
             $query->where('created_at', $date);
         }
     }

@@ -3,6 +3,7 @@
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AdminController;
+use Illuminate\Database\DatabaseManager;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -31,4 +32,5 @@ Route::post('/register', [AuthController::class, 'store']);
 Route::middleware('auth')->group(function() {
     Route::get('/admin', [AdminController::class, 'index'])->name('admin');
 });
+
 

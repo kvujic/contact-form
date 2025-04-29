@@ -1,6 +1,7 @@
 .thanks-content {
     position: relative;
-    height: 100vh;
+    max-width: 1230px;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;

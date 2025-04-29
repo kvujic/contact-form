@@ -12,7 +12,7 @@
 }
 
 .contact-form {
-    max-width: 100%;
+    max-width: 1230px;
     margin: 0 auto;
     padding: 20px 15px;
 
@@ -81,6 +81,12 @@ textarea {
     padding: 10px 15px;
     font-size: 14px;
     margin: 10px 0;
+    color: #8b7969;
+}
+
+input::placeholder,
+textarea::placeholder,
+select {
     color: #beb1a6;
 }
 

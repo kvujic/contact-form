@@ -130,10 +130,13 @@
                 </div>
                 <div class="form__group-content">
                     <div class="form__input--item-category">
+                        @php
+                            $selectedCategoryId = old('category_id', $contact['category_id'] ?? '');
+                        @endphp
                         <select class="form__input--option" name="category_id">
-                            <option value="" disabled {{ old('category_id') == '' ? 'selected' : '' }}>選択してください</option>
+                            <option value="" disabled>選択してください</option>
                             @foreach($categories as $category)
-                            <option value="{{ $category->id }}" {{ old('category_id') == $category->id ? 'selected' : '' }}>{{ $category->content }}</option>
+                            <option value="{{ $category->id }}" {{ $selectedCategoryId == $category->id ? 'selected' : '' }}>{{ $category->content }}</option>
                             @endforeach
                         </select>
                     </div>

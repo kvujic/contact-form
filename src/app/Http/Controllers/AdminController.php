@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Contact;
 use App\Models\Category;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -23,8 +24,18 @@ class AdminController extends Controller
         ->GenderSearch($request->gender)
         ->CategorySearch($request->category_id)
         ->DateSearch($request->date)
+        ->orderBy('id')
         ->paginate(7);
 
         return view('admin', compact('contacts', 'genders', 'categories'));
+    }
+
+    public function logout(Request $request) {
+        Auth::logout();
+
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
+        return redirect('/login');
     }
 }

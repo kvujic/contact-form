@@ -1,12 +1,12 @@
 .admin-wrapper {
-    max-width: 100%;
+    width: 1230px;
     margin: 0 auto;
     padding: 20px 15px;
 
 }
 
 .admin__heading {
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     text-align: center;
 
 }
@@ -17,8 +17,256 @@
 
 
 
-.form {
+.admin-search__group-select {
+    margin-bottom: 40px;
+}
+
+.admin-search__group-sub {
+    margin-bottom: 20px;
+}
+
+.admin-search__item {
+    display: flex;
+    justify-content: space-between;
     width: 100%;
-    padding: 0 15%;
+    height: 50px;
+    margin: 0 auto;
+}
+
+.admin-search__text {
+    border: 1px solid #e3ded9;
+    background-color: #fbfbfb;
+    color: #8b7969;
+    font-size: 16px;
+    width: 350px;
+    height: 100%;
+    padding: 20px;
+}
+
+.admin-search__text::placeholder {
+    color: #beb1a6;
+}
+
+.admin-search__select-gender {
+    position: relative;
+    display: inline-block;
+    width: 100px;
+}
+.admin-search__select-category {
+    position: relative;
+    display: inline-block;
+    width: 230px;
+}
+
+.admin-search__select-gender::after,
+.admin-search__select-category::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 15px solid #e0dfde;
+    transform: translateY(-50%);
+}
+
+.admin-search__select-gender option,
+.admin-search__select-category option {
+    color: #8b7969;
+}
+
+.admin-search__select-inner {
+    border: 1px solid #e3ded9;
+    background-color: #f4f4f4;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    color: #8b7969;
+    font-size: 18px;
+}
+
+.admin-search__select-date {
+    border: 1px solid #e3ded9;
+    background-color: #f4f4f4;
+    color: #8b7969;
+    font-size: 16px;
+    width: 150px;
+    height: 100%;
+    padding-left: 20px;
+}
+
+.admin-search__button {
+    display: flex;
+    justify-content: space-between;
+}
+
+.admin-search__button--search {
+    width: 100px;
+    height: 100%;
+    border: none;
+    background-color: #8b7969;
+    color: #fff;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.admin-search__button--reset {
+    width: 100px;
+    height: 100%;
+    border: none;
+    background-color: #d9c6b5;
+    color: #fff;
+    cursor: pointer;
+    font-size: 18px;
+    margin-left: 20px;
+}
+
+@media screen and (max-width:768px) {
+    .admin-search__item {
+    }
+}
+.admin-export__button {
+    border: none;
+    background-color: #e1dbd6;
+    color: #8b7969;
+    padding: 5px 20px;
+    width: 150px;
+    height: 80%;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+/* pagination */
+svg.w-5.h-5 {
+    width: 30px;
+    height: 30px;
+}
+
+.pagination {
+    display: flex;
+    align-items: flex-start;
+    list-style: none;
+    padding: 0;
+    width: 220px;
+    height: 100%;
+    font-size: 18px;
+}
+
+.pagination li {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    box-sizing: border-box;
+    border: 1px solid #e0dfde;
+    border-collapse: collapse;
+    color: #8b7969;
+    cursor: pointer;
+}
+
+.pagination li:first-child {
+    border-radius: 5px 0 0 5px;
+}
+
+.pagination li:last-child {
+    border-radius: 0 5px 5px 0;
+}
+
+.pagination li.active {
+    background-color: #8b7969;
+    color: #fff;
+}
+
+.pagination li.disabled {
+    cursor: not-allowed;
+}
+
+.pagination a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* table */
+.admin-table {
+    margin: 0 auto;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.admin-table__header {
+    border: 1px solid #e0dfde;
+    background-color: #8b7969;
+    color: #fff;
+    font-size: 20px;
+}
+
+.admin-table__body {
+    border: 1px solid #e0dfde;
+    font-size: 20px;
+}
+
+.admin-table__label-name,
+.admin-table__label-gender,
+.admin-table__label-email,
+.admin-table__label-category,
+.admin-table__label-button,
+.admin-table__item-name,
+.admin-table__item-gender,
+.admin-table__item-email,
+.admin-table__item-category,
+.admin-table__item-button {
+    padding-left: 50px;
+    padding-top: 13px;
+    padding-bottom: 13px;
+    border-bottom: 1px solid #e0dfde;
+}
+
+.admin-table__row {
+    text-align: left;
+    width: 100%;
+    height: 60px;
+}
+
+.admin-table__label-name,
+.admin-table__item-name {
+    width: 20%;
+}
+
+.admin-table__label-gender,
+.admin-table__item-gender {
+    width: 10%;
+}
+
+.admin-table__label-email,
+.admin-table__item-email {
+    width: 25%;
+}
+
+.admin-table__label-category,
+.admin-table__item-category {
+    width: 25%;
+}
+
+.admin-table__label-button,
+.admin-table__item-button {
+    width: 25%;
+    text-align: right;
+    padding-right: 50px;
+}
+
+#openModal {
+    border: 1px solid #d9c6b5;
+    color: #d9c6b5;
+    background-color: #fbfbfb;
+    padding: 4px 18px;
+    font-size: 18px;
+    cursor: pointer;
 
 }
