@@ -30,11 +30,14 @@ class Contact extends Model
         if(!empty($keyword)) {
             $query->where(function($subQuery) use ($keyword, $exact) {
                 if($exact) {
-                    $subQuery->where('name', $keyword)
-                             ->orWhere('email', $keyword);
+                    $subQuery->whereRaw("CONCAT(last_name, first_name) = ?", [$keyword])
+                    ->orWhere('last_name', $keyword)
+                    ->orWhere('first_name', $keyword)
+                    ->orWhere('email', $keyword);
                 } else {
-                    $subQuery->where('name', 'like', '%' . $keyword . '%')
-                             ->orWhere('email', 'like', '%' . $keyword . '%');
+                    $subQuery->where('last_name', 'like', '%' . $keyword . '%')
+                    ->orWhere('first_name', 'like', '%' . $keyword . '%')
+                    ->orWhere('email', 'like', '%' . $keyword . '%');
                 }
             });
         }

@@ -1,5 +1,5 @@
 .admin-wrapper {
-    width: 1230px;
+    max-width: 1230px;
     margin: 0 auto;
     padding: 20px 15px;
 
@@ -21,7 +21,7 @@
     margin-bottom: 40px;
 }
 
-.admin-search__group-sub {
+.admin-search__group-link {
     margin-bottom: 20px;
 }
 
@@ -261,12 +261,96 @@ svg.w-5.h-5 {
     padding-right: 50px;
 }
 
-#openModal {
+.admin-table__button-modal {
     border: 1px solid #d9c6b5;
     color: #d9c6b5;
     background-color: #fbfbfb;
     padding: 4px 18px;
     font-size: 18px;
     cursor: pointer;
+}
 
+button:hover {
+    opacity: 0.7;
+}
+
+
+/* modal button */
+.modal-overlay {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    position: relative;
+    padding: 40px 20px;
+    max-width: 50%;
+    background: #fff;
+    border: 1px solid #8b7969;
+    box-shadow: 2px 2px rgba(0,0,0,0.2);
+    box-sizing: border-box;
+
+}
+
+.button-close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    border-radius: 50%;
+    border: 1px solid #8b7969;
+    width: 40px;
+    height: 40px;
+    font-size: 30px;
+    background: #fff;
+    color: #8b7969;
+    cursor: pointer;
+}
+
+.modal-table {
+    width: 100%;
+    margin: 100px;
+}
+
+.modal-table__row {
+    width: 100%;
+    margin: 30px auto;
+    height: 60px;
+}
+
+.modal-table__title {
+    width: 20%;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: left;
+}
+
+.modal-table__item {
+    width: 40%;
+    font-size: 18px;
+    padding-right: 120px;
+}
+
+.modal-table__title,
+.modal-table__item {
+    vertical-align: top;
+}
+
+.modal-form__delete {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.button-delete {
+    font-size: 18px;
+    border: none;
+    background-color: #ba370d;
+    color: #fff;
+    padding: 5px 25px;
 }

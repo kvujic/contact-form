@@ -10,7 +10,7 @@
         <h2>Register</h2>
     </div>
 
-    <div class="register-form__outline">
+    <div class="register-form__enclosure">
         <form class="register-form" action="/register" method="POST">
             @csrf
             <div class="register-form__group">

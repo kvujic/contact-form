@@ -4,12 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Models\Contact;
 use App\Models\Category;
-use App\Models\User;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
-    public function index(Request $request) {
+    public function index(Request $request)
+    {
 
         $genders = [
             1 => '男性',
@@ -20,17 +20,18 @@ class AdminController extends Controller
         $categories = Category::all();
 
         $contacts = Contact::with('category')
-        ->KeywordSearch($request->keyword)
-        ->GenderSearch($request->gender)
-        ->CategorySearch($request->category_id)
-        ->DateSearch($request->date)
-        ->orderBy('id')
-        ->paginate(7);
+            ->KeywordSearch($request->keyword)
+            ->genderSearch($request->gender)
+            ->categorySearch($request->category_id)
+            ->dateSearch($request->date)
+            ->orderBy('id')
+            ->paginate(7);
 
         return view('admin', compact('contacts', 'genders', 'categories'));
     }
 
-    public function logout(Request $request) {
+    public function logout(Request $request)
+    {
         Auth::logout();
 
         $request->session()->invalidate();

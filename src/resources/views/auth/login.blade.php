@@ -10,7 +10,7 @@
         <h2>Login</h2>
     </div>
 
-    <div class="login-form__outline">
+    <div class="login-form__enclosure">
         <form class="login-form" action="/login" method="POST">
             @csrf
             <div class="login-form__group">
@@ -22,7 +22,7 @@
                 </div>
                 <div class="login-form__error">
                     @error('email')
-                    {{message}}
+                    <div class="login__error-message">{{$message}}</div>
                     @enderror
                 </div>
             </div>
@@ -34,8 +34,8 @@
                     <input type="password" name="password" placeholder="例.coachtech1306" value="{{ old('password') }}">
                 </div>
                 <div class="login-form__error">
-                    @error('email')
-                    {{message}}
+                    @error('password')
+                    <div class="login__error-message">{{$message}}</div>
                     @enderror
                 </div>
             </div>

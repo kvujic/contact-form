@@ -37,7 +37,7 @@ body {
     font-size: 32px;
 }
 
-.register-form__outline {
+.register-form__enclosure {
     border: 1px solid #c5b9b0;
     width: 45%;
     background-color: #fff;
@@ -87,4 +87,8 @@ body {
     color: #fff;
     padding: 10px 40px;
     font-size: 16px;
+}
+
+button:hover {
+    opacity: 0.7;
 }

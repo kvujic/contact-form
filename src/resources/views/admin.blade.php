@@ -13,7 +13,7 @@
 
     <form class="admin-search__group-select" action="/admin" method="GET">
         <div class="admin-search__item">
-            <input class="admin-search__text" type="text" name="keyword" placeholder="名前やメールアドレスを入力してください" value="">
+            <input class="admin-search__text" type="text" name="keyword" placeholder="名前やメールアドレスを入力してください" value="{{ request('keyword') }}">
             <div class="admin-search__select-gender">
                 <select class="admin-search__select-inner" name="gender">
                     <option value="" disabled selected>性別</option>
@@ -38,11 +38,11 @@
             </div>
         </div>
     </form>
-    <form class="admin-search__group-sub" action="{{ route('admin') }}" method="GET">
+    <form class="admin-search__group-link" action="{{ route('admin') }}" method="GET">
         <div class="admin-search__item">
             <button class="admin-export__button" type="submit">エクスポート</button>
             <div class="admin-pagination">
-                {{ $contacts->onEachSide(1)->links('vendor.pagination.custom') }}
+                {{ $contacts->onEachSide(1)->links('pagination::custom') }}
             </div>
         </div>
     </form>
@@ -75,7 +75,7 @@
                 </td>
                 <td class="admin-table__item-button">
                     <div class="admin-table__button-detail">
-                        <button id="openModal">詳細
+                        <button onclick="Livewire.emit('openModal', {{ $contact->id }})" type="button" class="admin-table__button-modal">詳細
                         </button>
                     </div>
                 </td>
@@ -83,5 +83,6 @@
             @endforeach
         </tbody>
     </table>
+    <livewire:modal />
 </div>
 @endsection

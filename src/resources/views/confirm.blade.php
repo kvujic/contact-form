@@ -5,6 +5,7 @@
 @endsection
 
 @section('content')
+
 <div class="confirm-content">
     <div class="confirm__heading">
         <h2>Confirm</h2>
@@ -14,8 +15,8 @@
             <tr class="confirm-table__row">
                 <th class="confirm-table__header">お名前</th>
                 <td class="confirm-table__text">
-                    <span>{{ $contact['last_name'] }}</span>
-                    <span>{{ $contact['first_name'] }}</span>
+                    <span>{{ $contact['last_name'] ?? ''}}</span>
+                    <span>{{ $contact['first_name'] ?? ''}}</span>
                 </td>
             </tr>
             <tr class="confirm-table__row">
@@ -24,43 +25,43 @@
                     @php
                     $genderText = ['1'=>'男性', '2'=>'女性', '3'=>'その他'];
                     @endphp
-                    {{ $genderText[$contact['gender']] }}
+                    {{ $genderText[$contact['gender']] ?? ''}}
                 </td>
             </tr>
             <tr class="confirm-table__row">
                 <th class="confirm-table__header">メールアドレス</th>
                 <td class="confirm-table__text">
-                    {{ $contact['email'] }}
+                    {{ $contact['email'] ?? ''}}
                 </td>
             </tr>
             <tr class="confirm-table__row">
                 <th class="confirm-table__header">電話番号</th>
                 <td class="confirm-table__text">
-                    {{ $contact['tel'] }}
+                    {{ $contact['tel'] ?? ''}}
                 </td>
             </tr>
             <tr class="confirm-table__row">
                 <th class="confirm-table__header">住所</th>
                 <td class="confirm-table__text">
-                    {{ $contact['address'] }}
+                    {{ $contact['address'] ?? ''}}
                 </td>
             </tr>
             <tr class="confirm-table__row">
                 <th class="confirm-table__header">建物名</th>
                 <td class="confirm-table__text">
-                    {{ $contact['building'] }}
+                    {{ $contact['building'] ?? ''}}
                 </td>
             </tr>
             <tr class="confirm-table__row">
                 <th class="confirm-table__header">お問い合わせの種類</th>
                 <td class="confirm-table__text">
-                    {{ $categories[$contact['category_id']] }}
+                    {{ $categories[$contact['category_id']] ?? ''}}
                 </td>
             </tr>
             <tr class="confirm-table__row">
                 <th class="confirm-table__header">お問い合わせ内容</th>
                 <td class="confirm-table__text">
-                    {{ $contact['detail'] }}
+                    {{ $contact['detail'] ?? ''}}
                 </td>
             </tr>
         </table>
@@ -88,4 +89,5 @@
         </form>
     </div>
 </div>
+
 @endsection

@@ -134,7 +134,7 @@
                             $selectedCategoryId = old('category_id', $contact['category_id'] ?? '');
                         @endphp
                         <select class="form__input--option" name="category_id">
-                            <option value="" disabled>選択してください</option>
+                            <option value="" disabled selected>選択してください</option>
                             @foreach($categories as $category)
                             <option value="{{ $category->id }}" {{ $selectedCategoryId == $category->id ? 'selected' : '' }}>{{ $category->content }}</option>
                             @endforeach

@@ -27,7 +27,9 @@ Route::post('/confirm', [ContactController::class, 'confirm']);
 Route::post('/thanks', [ContactController::class, 'store']);
 Route::get('/reset', [ContactController::class, 'reset']);
 
+
 Route::post('/register', [AuthController::class, 'store']);
+Route::post('/login', [AuthController::class, 'authenticate']);
 
 Route::middleware('auth')->group(function() {
     Route::get('/admin', [AdminController::class, 'index'])->name('admin');

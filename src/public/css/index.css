@@ -202,11 +202,15 @@ select {
 .form__button-submit {
     width: 160px;
     height: 45px;
-    font-size: 16px;
+    font-size: 20px;
     padding: 8px 30px;
     background-color: #82756a;
     color: #fff;
     border: none;
     cursor: pointer;
 
+}
+
+button:hover {
+    opacity: 0.7;
 }

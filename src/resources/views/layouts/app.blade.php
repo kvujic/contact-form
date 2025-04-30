@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="{{ asset('css/sanitize.css') }}">
     <link rel="stylesheet" href="{{ asset('css/common.css') }}">
     @yield('css')
+    @livewireStyles
 </head>
 
 <body>
@@ -21,7 +22,7 @@
     <header class="header">
         <div class="header__inner">
             <div class="header__logo">
-                <a class="header__logo-text">FashionablyLate</a>
+                <h1 class="header__logo-text">FashionablyLate</h1>
             </div>
             <nav class="header-nav">
                 <ul class="header-nav__inner">
@@ -53,6 +54,7 @@
 
     <main>
         @yield('content')
+        @livewireScripts
     </main>
 </body>
 
