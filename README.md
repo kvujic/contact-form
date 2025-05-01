@@ -15,6 +15,9 @@ Docker ビルド
 4. コンテナを起動  
    docker-compose up -d --build
 
+5. コードエディタを開く  
+   code .
+
 - MYSQL は、OS によって起動しない場合があるので、それぞれの環境に合わせて docker-compose.yml ファイルを編集してください。
 
 Laravel 環境構築
