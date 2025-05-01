@@ -117,6 +117,10 @@
 }
 
 .admin-search__button--reset {
+    display: inline-block;
+    text-align: center;
+    line-height: 50px;
+    text-decoration: none;
     width: 100px;
     height: 100%;
     border: none;

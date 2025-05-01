@@ -35,4 +35,4 @@ Route::middleware('auth')->group(function() {
     Route::get('/admin', [AdminController::class, 'index'])->name('admin');
 });
 
-
+Route::get('/admin/export', [AdminController::class, 'export'])->name('admin.export');

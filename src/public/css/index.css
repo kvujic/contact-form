@@ -147,10 +147,6 @@ select {
 }
 
 
-.form__input--option option[disabled] {
-    color: #beb1a6;
-}
-
 .form__input--item-category {
     position: relative;
     display: inline-block;
@@ -163,6 +159,11 @@ select {
     -moz-appearance: none;
     width: 100%;
     padding: 10px;
+    color: #8b7969;
+}
+
+.form__input--option option[disabled] {
+    color: #beb1a6 !important;
 }
 
 .form__input--item-category::after {

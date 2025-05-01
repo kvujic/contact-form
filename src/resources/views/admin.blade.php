@@ -17,9 +17,9 @@
             <div class="admin-search__select-gender">
                 <select class="admin-search__select-inner" name="gender">
                     <option value="" disabled selected>性別</option>
-                    <option value="">全て</option>
+                    <option value="{{ request('gender') }}">全て</option>
                     @foreach($genders as $key => $value)
-                    <option value="{{ $key }}">{{ $value }}</option>
+                    <option value="{{ $key }}" {{ request('gender') == $key ? 'selected' : ''}}>{{ $value }}</option>
                     @endforeach
                 </select>
             </div>
@@ -27,19 +27,22 @@
                 <select class="admin-search__select-inner" name="category_id">
                     <option value="" disabled selected>お問い合わせの種類</option>
                     @foreach($categories as $category)
-                    <option value="{{ $category->id }}">{{ $category->content }}</option>
+                    <option value="{{ $category->id }}" {{ request('category_id') == $category->id ? 'selected' : ''}}>{{ $category->content }}</option>
                     @endforeach
                 </select>
             </div>
-            <input class="admin-search__select-date" type="date" name="date" placeholder="年/月/日" value="">
+            <input class="admin-search__select-date" type="date" name="date" placeholder="年/月/日" value="{{ request('date') }}">
             <div class="admin-search__buttons">
                 <button class="admin-search__button--search" type="submit">検索</button>
-                <button class="admin-search__button--reset" type="reset">リセット</button>
+                <a class="admin-search__button--reset" href="/admin">リセット</a>
             </div>
         </div>
     </form>
-    <form class="admin-search__group-link" action="{{ route('admin') }}" method="GET">
+    <form class="admin-search__group-link" action="{{ route('admin.export') }}" method="GET">
         <div class="admin-search__item">
+            @foreach(request()->query() as $key => $value)
+            <input type="hidden" name="{{ $key }}" value="{{ $value }}">
+            @endforeach
             <button class="admin-export__button" type="submit">エクスポート</button>
             <div class="admin-pagination">
                 {{ $contacts->onEachSide(1)->links('pagination::custom') }}
