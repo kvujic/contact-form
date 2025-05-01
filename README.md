@@ -49,7 +49,7 @@ Laravel 環境構築
 
 ## ER 図
 
-![ER図](./images/er-drawio.png)
+![ER図](./images/er-diagram.png)
 
 ## URL
 
