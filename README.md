@@ -8,7 +8,8 @@ Dockerビルド
 1. リポジトリをクローン  
 git clone git@github.com:kvujic/contact-form.git
 
-3. コンテナを起動  
+
+2. コンテナを起動  
 docker-compose up -d --build
 
 * MYSQLは、OSによって起動しない場合があるので、それぞれの環境に合わせてdocker-compose.ymlファイルを編集してください。
