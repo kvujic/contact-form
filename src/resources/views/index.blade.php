@@ -88,9 +88,12 @@
                         <input type="tel" name="tel3" placeholder="5678" value="{{ old('tel3', $contact['tel3'] ?? '') }}">
                     </div>
                     <div class="form__error">
-                        @error('tel')
+                        @foreach (['tel1', 'tel2', 'tel3'] as $field)
+                        @error($field)
                         <div class="error-message">{{ $message }}</div>
+                        @break
                         @enderror
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -131,7 +134,7 @@
                 <div class="form__group-content">
                     <div class="form__input--item-category">
                         @php
-                            $selectedCategoryId = old('category_id', $contact['category_id'] ?? '');
+                        $selectedCategoryId = old('category_id', $contact['category_id'] ?? '');
                         @endphp
                         <select class="form__input--option" name="category_id">
                             <option value="" disabled selected>選択してください</option>

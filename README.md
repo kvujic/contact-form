@@ -4,10 +4,15 @@
 
 Docker ビルド
 
-1. リポジトリをクローン  
+1. ディレクトリを作成
+
+2. 作成したディレクトリ以下にリポジトリをクローン  
    git clone git@github.com:kvujic/contact-form.git
 
-2. コンテナを起動  
+3. 取得したディレクトリに移動  
+   cd contact-form
+
+4. コンテナを起動  
    docker-compose up -d --build
 
 - MYSQL は、OS によって起動しない場合があるので、それぞれの環境に合わせて docker-compose.yml ファイルを編集してください。
@@ -25,13 +30,6 @@ Laravel 環境構築
 
 4. APP_KEY 生成  
    php artisan key:generate
-
-5. Fortify をインストール  
-   composer require laravel/fortify
-   php artisan vendor:publish --provider="Laravel\Fortify\FortifyServiceProvider"
-
-6. Livewire をインストール  
-   composer require livewire/livewire
 
 7. マイグレーションを実行  
    php artisan migrate

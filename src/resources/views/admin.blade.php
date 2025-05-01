@@ -49,43 +49,7 @@
             </div>
         </div>
     </form>
-    <table class="admin-table">
-        <thead class="admin-table__header">
-            <tr class="admin-table__row">
-                <th class="admin-table__label-name">お名前</th>
-                <th class="admin-table__label-gender">性別</th>
-                <th class="admin-table__label-email">メールアドレス</th>
-                <th class="admin-table__label-category">お問い合わせの種類</th>
-                <th class="admin-table__label-button"></th>
-            </tr>
-        </thead>
-        <tbody class="admin-table__body">
-            @foreach($contacts as $contact)
-            <tr class="admin-table__row">
-                <td class="admin-table__item-name">{{ $contact->last_name }}&nbsp;{{ $contact->first_name }}</td>
-                <td class="admin-table__item-gender">
-                    @if($contact->gender == 1)
-                    男性
-                    @elseif($contact->gender == 2)
-                    女性
-                    @else
-                    その他
-                    @endif
-                </td>
-                <td class="admin-table__item-email">{{ $contact->email }}</td>
-                <td class="admin-table__item-category">
-                    {{ $contact->category->content }}
-                </td>
-                <td class="admin-table__item-button">
-                    <div class="admin-table__button-detail">
-                        <button onclick="Livewire.emit('openModal', {{ $contact->id }})" type="button" class="admin-table__button-modal">詳細
-                        </button>
-                    </div>
-                </td>
-            </tr>
-            @endforeach
-        </tbody>
-    </table>
+    
     <livewire:modal />
 </div>
 @endsection

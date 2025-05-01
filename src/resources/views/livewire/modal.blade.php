@@ -1,4 +1,44 @@
 <div>
+    <!-- list table -->
+    <table class="admin-table">
+        <thead class="admin-table__header">
+            <tr class="admin-table__row">
+                <th class="admin-table__label-name">お名前</th>
+                <th class="admin-table__label-gender">性別</th>
+                <th class="admin-table__label-email">メールアドレス</th>
+                <th class="admin-table__label-category">お問い合わせの種類</th>
+                <th class="admin-table__label-button"></th>
+            </tr>
+        </thead>
+        <tbody class="admin-table__body">
+            @foreach($contacts as $c)
+            <tr class="admin-table__row">
+                <td class="admin-table__item-name">{{ $c->last_name }}&nbsp;{{ $c->first_name }}</td>
+                <td class="admin-table__item-gender">
+                    @if($c->gender == 1)
+                    男性
+                    @elseif($c->gender == 2)
+                    女性
+                    @else
+                    その他
+                    @endif
+                </td>
+                <td class="admin-table__item-email">{{ $c->email }}</td>
+                <td class="admin-table__item-category">
+                    {{ $c->category->content }}
+                </td>
+                <td class="admin-table__item-button">
+                    <div class="admin-table__button-detail">
+                        <button onclick="Livewire.emit('openModal', {{ $c->id }})" type="button" class="admin-table__button-modal">詳細
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            @endforeach
+        </tbody>
+    </table>
+
+    <!-- modal -->
     @if($showModal)
     <div class="modal-overlay">
         <div class="modal-content">
@@ -45,10 +85,7 @@
                     <td class="modal-table__item">{{ $contact->detail }}</td>
                 </tr>
             </table>
-            <form class="modal-form__delete" action="/admin" method="POST">
-                @csrf
-                @method('DELETE')
-                <input type="hidden" name="id" value="{{ $contact->id }}">
+            <div class="modal-form__delete">
                 <button wire:click="deleteContact" class="button-delete">削除</button>
             </div>
         </div>
