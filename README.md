@@ -54,5 +54,9 @@ php artisan migrate:fresh
 
 ## URL
 
-- 開発環境：http://localhost/
+- 開発環境：  
+  http://localhost/  
+  http://localhost/register/  
+  http://localhost/login/  
+　　　　　
 - phpMyAdmin：http://localhost:8080/
