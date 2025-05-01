@@ -32,7 +32,7 @@ Laravel 環境構築
    php artisan key:generate
 
 7. マイグレーションを実行  
-   php artisan migrate
+php artisan migrate:fresh
 
 8. シーディングを実行  
    php artisan db:seed

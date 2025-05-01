@@ -21,5 +21,8 @@ class CategoriesTableSeeder extends Seeder
             ['content' => 'ショップへのお問い合わせ'],
             ['content' => 'その他'],
         ]);
+
     }
+
 }
+
