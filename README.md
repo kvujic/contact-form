@@ -40,6 +40,17 @@ php artisan migrate:fresh
 8. シーディングを実行  
    php artisan db:seed
 
+## 変更する環境変数
+
+.env  
+DB_CONNECTION=mysql  
+DB_HOST=mysql  
+DB_PORT=3306  
+DB_DATABASE=laravel_db  
+DB_USERNAME=laravel_user  
+DB_PASSWORD=laravel_pass  
+
+
 ## 使用技術
 
 - Laravel 8.83.29

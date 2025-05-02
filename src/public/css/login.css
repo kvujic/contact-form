@@ -94,3 +94,13 @@ body {
 button:hover {
     opacity: 0.7;
 }
+
+@media screen and (max-width:768px) {
+    .login-form__enclosure {
+        width: 70%;
+    }
+
+    .login-form__group {
+        padding: 0;
+    }
+}

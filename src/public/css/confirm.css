@@ -88,3 +88,33 @@
 button:hover {
     opacity: 0.7;
 }
+
+@media screen and (max-width: 768px) {
+    .confirm-content {
+        width: 100%;
+    }
+
+    .confirm__heading {
+        width: 100%;
+    }
+
+    .confirm-table__header {
+        font-size: 16px;
+        padding: 10px 20px;
+        width: 25%;
+    }
+
+    .confirm-table__text {
+        font-size: 16px;
+    }
+
+    .confirm__button-submit {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+
+    .fixes-contents {
+        font-size: 16px;
+
+    }
+}@media screen and (max-width: 768px) {

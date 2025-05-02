@@ -92,3 +92,13 @@ body {
 button:hover {
     opacity: 0.7;
 }
+
+@media screen and (max-width:768px) {
+    .register-form__enclosure {
+        width: 70%;
+    }
+
+    .register-form__group {
+        padding: 0;
+    }
+}
